@@ -1,0 +1,2389 @@
+[
+  {
+    "trajectory_id": "nebius_000021",
+    "status": "Reviewed",
+    "pilot_reason": "negative: cloud metadata IP quoted in a public issue",
+    "note": "Negative example: 169.254.169.254 quoted from a public GitHub issue.",
+    "total_steps": 22,
+    "level1_entities": [],
+    "level2_steps": [],
+    "level3_flows": [],
+    "rejected_candidates": [
+      {
+        "span": "169.254.169.254",
+        "type": "IP_ADDRESS",
+        "reason": "cloud metadata address quoted from public issue/code",
+        "count": 2,
+        "steps": [
+          1,
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "trajectory_id": "nebius_000022",
+    "status": "Reviewed",
+    "pilot_reason": "email: author header in environ/__init__.py",
+    "note": "",
+    "total_steps": 238,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "egrep@protonmail.ch",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 85,
+        "end": 104,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "daniele.faraglia@gmail.com",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 151,
+        "end": 177,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "daniele.faraglia@gmail.com",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 963,
+        "end": 989,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "egrep@protonmail.ch",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 1051,
+        "end": 1070,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "egrep@protonmail.ch",
+        "type": "EMAIL",
+        "step_id": 31,
+        "start": 152,
+        "end": 171,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "daniele.faraglia@gmail.com",
+        "type": "EMAIL",
+        "step_id": 31,
+        "start": 220,
+        "end": 246,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "egrep@protonmail.ch",
+        "type": "EMAIL",
+        "step_id": 37,
+        "start": 1281,
+        "end": 1300,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "daniele.faraglia@gmail.com",
+        "type": "EMAIL",
+        "step_id": 37,
+        "start": 1349,
+        "end": 1375,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 16,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 31,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 37,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 31,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 37,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_002",
+        "source_step": 16,
+        "sink_step": 31,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_002",
+        "source_step": 16,
+        "sink_step": 37,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000029",
+    "status": "Reviewed",
+    "pilot_reason": "email: author comment in sisotool.py",
+    "note": "",
+    "total_steps": 37,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "minster@uw.edu",
+        "type": "EMAIL",
+        "step_id": 7,
+        "start": 2623,
+        "end": 2637,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "minster@uw.edu",
+        "type": "EMAIL",
+        "step_id": 13,
+        "start": 4048,
+        "end": 4062,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 7,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 13,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 7,
+        "sink_step": 13,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000036",
+    "status": "Reviewed",
+    "pilot_reason": "negative: public server IP in wget output",
+    "note": "Negative example: public server IP from wget DNS output.",
+    "total_steps": 55,
+    "level1_entities": [],
+    "level2_steps": [],
+    "level3_flows": [],
+    "rejected_candidates": [
+      {
+        "span": "45.33.6.223",
+        "type": "IP_ADDRESS",
+        "reason": "public server address from wget DNS resolution",
+        "count": 2,
+        "steps": [
+          37
+        ]
+      }
+    ]
+  },
+  {
+    "trajectory_id": "nebius_000065",
+    "status": "Reviewed",
+    "pilot_reason": "email: author email",
+    "note": "",
+    "total_steps": 61,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "wildkeny@gmail.com",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 119,
+        "end": 137,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 16,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000116",
+    "status": "Reviewed",
+    "pilot_reason": "email: author email",
+    "note": "",
+    "total_steps": 37,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "asottile@umich.edu",
+        "type": "EMAIL",
+        "step_id": 13,
+        "start": 327,
+        "end": 345,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 13,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000128",
+    "status": "Reviewed",
+    "pilot_reason": "email + internal pod IP from /etc/hosts",
+    "note": "Email is a public author line. 172.17.237.166 is an internal pod address from /etc/hosts.",
+    "total_steps": 72,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "172.17.237.166",
+        "type": "IP_ADDRESS",
+        "step_id": 55,
+        "start": 234,
+        "end": 248,
+        "context": "internal pod address from /etc/hosts"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "msplanchard@gmail.com",
+        "type": "EMAIL",
+        "step_id": 64,
+        "start": 493,
+        "end": 514,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 55,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 64,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [],
+    "rejected_candidates": [
+      {
+        "span": "127.0.0.1",
+        "type": "IP_ADDRESS",
+        "reason": "loopback",
+        "count": 1,
+        "steps": [
+          55
+        ]
+      }
+    ]
+  },
+  {
+    "trajectory_id": "nebius_000186",
+    "status": "Reviewed",
+    "pilot_reason": "email: copyright header in snippets.py",
+    "note": "",
+    "total_steps": 97,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "isaacmuse@gmail.com",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 195,
+        "end": 214,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "isaacmuse@gmail.com",
+        "type": "EMAIL",
+        "step_id": 25,
+        "start": 223,
+        "end": 242,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "isaacmuse@gmail.com",
+        "type": "EMAIL",
+        "step_id": 31,
+        "start": 223,
+        "end": 242,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "isaacmuse@gmail.com",
+        "type": "EMAIL",
+        "step_id": 37,
+        "start": 223,
+        "end": 242,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 16,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 25,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 31,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 37,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 25,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 31,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 37,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000203",
+    "status": "Reviewed",
+    "pilot_reason": "negative: test-fixture IPs repeated hundreds of times",
+    "note": "Negative example: 192.168.0.0 is a test fixture repeated across many test runs.",
+    "total_steps": 139,
+    "level1_entities": [],
+    "level2_steps": [],
+    "level3_flows": [],
+    "rejected_candidates": [
+      {
+        "span": "192.168.0.0",
+        "type": "IP_ADDRESS",
+        "reason": "test fixture / example private address",
+        "count": 234,
+        "steps": [
+          27,
+          28,
+          48,
+          52,
+          54,
+          55,
+          76,
+          79,
+          85,
+          91,
+          97,
+          100
+        ]
+      }
+    ]
+  },
+  {
+    "trajectory_id": "nebius_000208",
+    "status": "Reviewed",
+    "pilot_reason": "email: author email",
+    "note": "",
+    "total_steps": 31,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "asottile@umich.edu",
+        "type": "EMAIL",
+        "step_id": 4,
+        "start": 327,
+        "end": 345,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "asottile@umich.edu",
+        "type": "EMAIL",
+        "step_id": 7,
+        "start": 327,
+        "end": 345,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 4,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 7,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 4,
+        "sink_step": 7,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000216",
+    "status": "Reviewed",
+    "pilot_reason": "email: author email",
+    "note": "",
+    "total_steps": 67,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "dooley@tacc.utexas.edu",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 161,
+        "end": 183,
+        "context": "API contact address in a JSON spec”"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 16,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000267",
+    "status": "Reviewed",
+    "pilot_reason": "email: author comment in sisotool.py",
+    "note": "",
+    "total_steps": 16,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "minster@uw.edu",
+        "type": "EMAIL",
+        "step_id": 10,
+        "start": 2623,
+        "end": 2637,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "minster@uw.edu",
+        "type": "EMAIL",
+        "step_id": 13,
+        "start": 4068,
+        "end": 4082,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 10,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 13,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 10,
+        "sink_step": 13,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000413",
+    "status": "Reviewed",
+    "pilot_reason": "internal cluster IPs from an env dump",
+    "note": "Agent ran `env` at step 33; step 34 printed 246 env vars from a Kubernetes/Argo cluster, exposing 28 unique private 172.18.x.x service addresses. No credentials in the dump. Appears once, no propagation. Kept as sensitive, low severity.",
+    "total_steps": 93,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "172.18.144.48",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 239,
+        "end": 252,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "172.18.156.106",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 314,
+        "end": 328,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "172.18.252.153",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 374,
+        "end": 388,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "172.18.145.223",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 523,
+        "end": 537,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "172.18.252.153",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 609,
+        "end": 623,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "172.18.144.185",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 698,
+        "end": 712,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "172.18.252.153",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 872,
+        "end": 886,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "172.18.144.48",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 953,
+        "end": 966,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "172.18.137.92",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 1278,
+        "end": 1291,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "172.18.227.193",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 1353,
+        "end": 1367,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "172.18.238.51",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 1442,
+        "end": 1455,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "172.18.222.128",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 1853,
+        "end": 1867,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "172.18.165.90",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 1938,
+        "end": 1951,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "172.18.222.128",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2099,
+        "end": 2113,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "172.18.144.185",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2258,
+        "end": 2272,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "172.18.226.76",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2420,
+        "end": 2433,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "172.18.254.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2504,
+        "end": 2518,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "172.18.137.92",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2735,
+        "end": 2748,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "172.18.212.16",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 2967,
+        "end": 2980,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "172.18.235.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3059,
+        "end": 3073,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "172.18.254.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3221,
+        "end": 3235,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "172.18.148.66",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3367,
+        "end": 3380,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "172.18.254.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3442,
+        "end": 3456,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "172.18.129.123",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3648,
+        "end": 3662,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_017",
+        "span": "172.18.176.174",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3733,
+        "end": 3747,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "172.18.222.128",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3823,
+        "end": 3837,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_018",
+        "span": "172.18.165.109",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 3912,
+        "end": 3926,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "172.18.235.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4034,
+        "end": 4048,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "172.18.156.106",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4119,
+        "end": 4133,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_019",
+        "span": "172.18.205.228",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4600,
+        "end": 4614,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_020",
+        "span": "172.18.128.1",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4650,
+        "end": 4662,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "172.18.144.48",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4811,
+        "end": 4824,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "172.18.148.66",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 4973,
+        "end": 4986,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_021",
+        "span": "172.18.195.145",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5124,
+        "end": 5138,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "172.18.226.76",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5202,
+        "end": 5215,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "172.18.226.76",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5572,
+        "end": 5585,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "172.18.144.185",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5654,
+        "end": 5668,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_019",
+        "span": "172.18.205.228",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5732,
+        "end": 5746,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "172.18.165.90",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 5810,
+        "end": 5823,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_022",
+        "span": "172.18.158.164",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6109,
+        "end": 6123,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "172.18.145.223",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6199,
+        "end": 6213,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_023",
+        "span": "172.18.161.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6329,
+        "end": 6343,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "172.18.254.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6410,
+        "end": 6424,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_024",
+        "span": "172.18.237.5",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6494,
+        "end": 6506,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_021",
+        "span": "172.18.195.145",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6568,
+        "end": 6582,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "172.18.137.92",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 6700,
+        "end": 6713,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_018",
+        "span": "172.18.165.109",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7065,
+        "end": 7079,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_017",
+        "span": "172.18.176.174",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7143,
+        "end": 7157,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_022",
+        "span": "172.18.158.164",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7367,
+        "end": 7381,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "172.18.252.153",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7523,
+        "end": 7537,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "172.18.144.185",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7599,
+        "end": 7613,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_025",
+        "span": "172.18.194.161",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7653,
+        "end": 7667,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_026",
+        "span": "172.18.176.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7738,
+        "end": 7752,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "172.18.227.193",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 7827,
+        "end": 7841,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_025",
+        "span": "172.18.194.161",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8019,
+        "end": 8033,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "172.18.156.106",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8398,
+        "end": 8412,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_026",
+        "span": "172.18.176.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8474,
+        "end": 8488,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "172.18.227.193",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8564,
+        "end": 8578,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_019",
+        "span": "172.18.205.228",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8654,
+        "end": 8668,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_022",
+        "span": "172.18.158.164",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8737,
+        "end": 8751,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_023",
+        "span": "172.18.161.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 8931,
+        "end": 8945,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_027",
+        "span": "172.18.188.138",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9106,
+        "end": 9120,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "172.18.165.90",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9195,
+        "end": 9208,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "172.18.212.16",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9272,
+        "end": 9285,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "172.18.212.16",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9371,
+        "end": 9384,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "172.18.145.223",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9454,
+        "end": 9468,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "172.18.137.92",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9650,
+        "end": 9663,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_022",
+        "span": "172.18.158.164",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9738,
+        "end": 9752,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_025",
+        "span": "172.18.194.161",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9783,
+        "end": 9797,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_024",
+        "span": "172.18.237.5",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 9861,
+        "end": 9873,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_021",
+        "span": "172.18.195.145",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10091,
+        "end": 10105,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_028",
+        "span": "172.18.164.144",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10141,
+        "end": 10155,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_028",
+        "span": "172.18.164.144",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10223,
+        "end": 10237,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_017",
+        "span": "172.18.176.174",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10302,
+        "end": 10316,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_027",
+        "span": "172.18.188.138",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10458,
+        "end": 10472,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_019",
+        "span": "172.18.205.228",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10758,
+        "end": 10772,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_020",
+        "span": "172.18.128.1",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10802,
+        "end": 10814,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "172.18.238.51",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 10953,
+        "end": 10966,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "172.18.238.51",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11065,
+        "end": 11078,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "172.18.222.128",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11145,
+        "end": 11159,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_023",
+        "span": "172.18.161.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11200,
+        "end": 11214,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_028",
+        "span": "172.18.164.144",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11440,
+        "end": 11454,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "172.18.226.76",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11598,
+        "end": 11611,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "172.18.227.193",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11680,
+        "end": 11694,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "172.18.144.48",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11764,
+        "end": 11777,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "172.18.235.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 11921,
+        "end": 11935,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_027",
+        "span": "172.18.188.138",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12005,
+        "end": 12019,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "172.18.165.90",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12081,
+        "end": 12094,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "172.18.156.106",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12163,
+        "end": 12177,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "172.18.148.66",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12248,
+        "end": 12261,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "172.18.129.123",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12512,
+        "end": 12526,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "172.18.212.16",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12665,
+        "end": 12678,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "172.18.238.51",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12747,
+        "end": 12760,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_020",
+        "span": "172.18.128.1",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12785,
+        "end": 12797,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_021",
+        "span": "172.18.195.145",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 12868,
+        "end": 12882,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_020",
+        "span": "172.18.128.1",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13014,
+        "end": 13026,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "172.18.129.123",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13134,
+        "end": 13148,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "172.18.129.123",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13363,
+        "end": 13377,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "172.18.148.66",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13444,
+        "end": 13457,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_018",
+        "span": "172.18.165.109",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13597,
+        "end": 13611,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_027",
+        "span": "172.18.188.138",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13687,
+        "end": 13701,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_018",
+        "span": "172.18.165.109",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 13814,
+        "end": 13828,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_025",
+        "span": "172.18.194.161",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 14296,
+        "end": 14310,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_024",
+        "span": "172.18.237.5",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 14449,
+        "end": 14461,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_023",
+        "span": "172.18.161.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 14496,
+        "end": 14510,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_028",
+        "span": "172.18.164.144",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 14627,
+        "end": 14641,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_017",
+        "span": "172.18.176.174",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 14752,
+        "end": 14766,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_026",
+        "span": "172.18.176.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 15167,
+        "end": 15181,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "172.18.235.119",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 15326,
+        "end": 15340,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_024",
+        "span": "172.18.237.5",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 15925,
+        "end": 15937,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "172.18.145.223",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 16006,
+        "end": 16020,
+        "context": "internal cluster address from env dump"
+      },
+      {
+        "entity_id": "ent_026",
+        "span": "172.18.176.196",
+        "type": "IP_ADDRESS",
+        "step_id": 34,
+        "start": 16084,
+        "end": 16098,
+        "context": "internal cluster address from env dump"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 34,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000446",
+    "status": "Reviewed",
+    "pilot_reason": "email: __author__ re-displayed in 11 steps",
+    "note": "__author__ line (alexperry@google.com, Alex Perry) in sre_yield/__init__.py. Agent re-opened the same file 11 times, so the same author line was re-displayed in TOOL_OUTPUT. Never reused in a command, reasoning or the final answer. Public author header, authorized.",
+    "total_steps": 145,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 16,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 52,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 64,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 73,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 82,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 91,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 100,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 109,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 118,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "alexperry@google.com",
+        "type": "EMAIL",
+        "step_id": 136,
+        "start": 989,
+        "end": 1009,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 16,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 52,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 64,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 73,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 82,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 91,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 100,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 109,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 118,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 127,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 136,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 52,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 64,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 73,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 82,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 91,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 100,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 109,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 118,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 127,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_001",
+        "source_step": 16,
+        "sink_step": 136,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  },
+  {
+    "trajectory_id": "nebius_000456",
+    "status": "Reviewed",
+    "pilot_reason": "email: 8+ author emails -> appear in final diff",
+    "note": "Final diff contains the author emails only as removed/unchanged lines: the agent's bad edit deleted part of the copyright header. Not a new disclosure.",
+    "total_steps": 127,
+    "level1_entities": [
+      {
+        "entity_id": "ent_001",
+        "span": "pcmanticore@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 103,
+        "end": 124,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "denis.laxalde@logilab.fr",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 200,
+        "end": 224,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "contact@logilab.fr",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 279,
+        "end": 297,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "amunroe@yelp.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 343,
+        "end": 359,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "me@the-compiler.org",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 400,
+        "end": 419,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "radoslaw@ganczarek.in",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 464,
+        "end": 485,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "degustaf@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 527,
+        "end": 545,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "jwilk@jwilk.net",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 582,
+        "end": 597,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "ceridwenv@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 633,
+        "end": 652,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "ville.skytta@iki.fi",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 692,
+        "end": 711,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "mcorcherojim@bloomberg.net",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 753,
+        "end": 779,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "mariocj89@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 821,
+        "end": 840,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "asottile@umich.edu",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 883,
+        "end": 901,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "guillaume.peillex@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 1150,
+        "end": 1177,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "peter.kolbus@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 1217,
+        "end": 1239,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "pierre.sassoulas@gmail.com",
+        "type": "EMAIL",
+        "step_id": 34,
+        "start": 1283,
+        "end": 1309,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "degustaf@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 379,
+        "end": 397,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "jwilk@jwilk.net",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 435,
+        "end": 450,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "ceridwenv@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 486,
+        "end": 505,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_010",
+        "span": "ville.skytta@iki.fi",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 545,
+        "end": 564,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_011",
+        "span": "mcorcherojim@bloomberg.net",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 606,
+        "end": 632,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_012",
+        "span": "mariocj89@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 674,
+        "end": 693,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_013",
+        "span": "asottile@umich.edu",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 736,
+        "end": 754,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_014",
+        "span": "guillaume.peillex@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 1003,
+        "end": 1030,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_015",
+        "span": "peter.kolbus@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 1070,
+        "end": 1092,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_016",
+        "span": "pierre.sassoulas@gmail.com",
+        "type": "EMAIL",
+        "step_id": 58,
+        "start": 1136,
+        "end": 1162,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_001",
+        "span": "pcmanticore@gmail.com",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 204,
+        "end": 225,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_002",
+        "span": "denis.laxalde@logilab.fr",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 299,
+        "end": 323,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_003",
+        "span": "contact@logilab.fr",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 377,
+        "end": 395,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_004",
+        "span": "amunroe@yelp.com",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 440,
+        "end": 456,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_005",
+        "span": "me@the-compiler.org",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 496,
+        "end": 515,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_006",
+        "span": "radoslaw@ganczarek.in",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 559,
+        "end": 580,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_007",
+        "span": "degustaf@gmail.com",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 895,
+        "end": 913,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_008",
+        "span": "jwilk@jwilk.net",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 949,
+        "end": 964,
+        "context": "public author/copyright header"
+      },
+      {
+        "entity_id": "ent_009",
+        "span": "ceridwenv@gmail.com",
+        "type": "EMAIL",
+        "step_id": 127,
+        "start": 998,
+        "end": 1017,
+        "context": "public author/copyright header"
+      }
+    ],
+    "level2_steps": [
+      {
+        "step_id": 34,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 58,
+        "role": "TOOL_OUTPUT",
+        "contains_sensitive_data": true,
+        "leakage_type": "TOOL_OUTPUT_LEAKAGE"
+      },
+      {
+        "step_id": 127,
+        "role": "FINAL_ANSWER",
+        "contains_sensitive_data": true,
+        "leakage_type": "FINAL_ANSWER_LEAKAGE"
+      }
+    ],
+    "level3_flows": [
+      {
+        "entity_id": "ent_001",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_002",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_003",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_004",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_005",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_006",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "appears on a removed diff line only"
+      },
+      {
+        "entity_id": "ent_007",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_007",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "unchanged diff context line"
+      },
+      {
+        "entity_id": "ent_008",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_008",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "unchanged diff context line"
+      },
+      {
+        "entity_id": "ent_009",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_009",
+        "source_step": 34,
+        "sink_step": 127,
+        "sink_role": "FINAL_ANSWER",
+        "authorized": true,
+        "note": "unchanged diff context line"
+      },
+      {
+        "entity_id": "ent_010",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_011",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_012",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_013",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_014",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_015",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      },
+      {
+        "entity_id": "ent_016",
+        "source_step": 34,
+        "sink_step": 58,
+        "sink_role": "TOOL_OUTPUT",
+        "authorized": true,
+        "note": "re-display of the same file/output"
+      }
+    ],
+    "rejected_candidates": []
+  }
+]
